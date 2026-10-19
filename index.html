@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="刘楠个人主页 — 深圳大学计算机技术硕士，求职产品经理/项目管理/开发测试岗位" />
+  <title>刘楠 | 个人主页</title>
+  <link rel="stylesheet" href="css/style.css?v=6" />
+</head>
+<body>
+
+  <!-- 背景动态光斑层 -->
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span><span class="orb orb-2"></span><span class="orb orb-3"></span>
+  </div>
+
+  <!-- 鼠标拖尾画布 -->
+  <canvas id="trail-canvas" aria-hidden="true"></canvas>
+
+  <!-- 滚动进度条 -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- 固定导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="nav-logo-mark">刘</span>
+        <span class="nav-logo-text">刘楠<span class="logo-en">Liu Nan</span></span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home"      class="nav-link">首页</a></li>
+        <li><a href="#about"     class="nav-link">关于我</a></li>
+        <li><a href="#research"  class="nav-link">科研成果</a></li>
+        <li><a href="#strength"  class="nav-link">核心优势</a></li>
+        <li><a href="#projects"  class="nav-link">项目经历</a></li>
+        <li><a href="#awards"    class="nav-link">荣誉证书</a></li>
+        <li><a href="#contact"   class="nav-link">联系方式</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="切换深浅色主题">☀</button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 首屏 Hero（左右非对称 Bento 布局） ========== -->
+  <header id="home" class="hero">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="hero-bento">
+      <div class="hero-left">
+        <div class="hero-avatar" aria-hidden="true"><span>刘</span></div>
+        <h1 class="hero-name">刘楠</h1>
+        <p class="hero-typed" aria-label="个人介绍"><span id="typed-text"></span><span class="typed-cursor">|</span></p>
+        <div class="hero-cta">
+          <a href="#strength" class="btn btn-primary">查看核心优势</a>
+          <a href="#contact" class="btn btn-ghost">联系我</a>
+        </div>
+        <div class="hero-tags">
+          <span class="htag">中共党员</span><span class="htag">推免硕士</span>
+          <span class="htag">第一作者2篇论文</span><span class="htag">专业前4.1%</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-clock card-glass">
+          <div class="clock-time" id="clock-time">--:--</div>
+          <div class="clock-date" id="clock-date">--</div>
+          <div class="clock-ring" id="clock-ring"></div>
+        </div>
+        <div class="hero-quick card-glass">
+          <h3 class="quick-title">快速导航</h3>
+          <a href="#about" class="quick-link">关于我<span>→</span></a>
+          <a href="#research" class="quick-link">科研成果<span>→</span></a>
+          <a href="#strength" class="quick-link">核心优势<span>→</span></a>
+          <a href="#awards" class="quick-link">荣誉证书<span>→</span></a>
+          <a href="#contact" class="quick-link">联系方式<span>→</span></a>
+        </div>
+      </div>
+    </div>
+    <a href="#strength" class="hero-scroll" aria-label="向下滚动">
+      <span class="hero-scroll-text">向下了解</span><span class="hero-scroll-arrow"></span>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- ========== 关于我 ========== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head"><h2 class="section-title">关于我</h2><p class="section-subtitle">About Me</p></div>
+        <div class="about-grid">
+          <div class="about-left">
+            <div class="card-glass reveal about-intro">
+              <p>深圳大学计算机技术专业 2026 级硕士研究生，本科毕业于西北民族大学计算机科学与技术专业，中共党员。具备扎实的计算机专业理论基础与较强的实践创新能力，本科期间以<strong>第一作者身份发表两篇学术论文</strong>（另参与一篇），专业成绩排名前 4.1%，平均学分绩点 3.80。多次担任学生干部，具备良好的团队协作与沟通协调能力，性格严谨务实、责任心强，面对复杂问题能保持清晰的逻辑思维与耐心钻研的态度。</p>
+            </div>
+            <h3 class="block-title">教育背景</h3>
+            <div class="edu-list">
+              <div class="edu-card card-glass reveal">
+                <div class="edu-stage">硕士</div><div class="edu-school">深圳大学</div>
+                <div class="edu-major">计算机技术 · 计算机与软件学院</div>
+                <div class="edu-time">2026.09 - 至今</div>
+                <div class="edu-note">推免录取（深大腾讯云人工智能学院）</div>
+              </div>
+              <div class="edu-card card-glass reveal">
+                <div class="edu-stage">本科</div><div class="edu-school">西北民族大学</div>
+                <div class="edu-major">计算机科学与技术</div>
+                <div class="edu-time">2022.09 - 2026.07</div>
+                <div class="edu-note">绩点 3.80 · 专业排名前 4.1%（6/143）· 综合排名 5/143</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-right">
+            <div class="card-glass reveal highlight-card">
+              <h3 class="highlight-title">核心亮点</h3>
+              <ul class="highlight-list">
+                <li><span class="hl-dot"></span>国家奖学金 + 国家励志奖学金</li>
+                <li><span class="hl-dot"></span>挑战杯省一等奖 · 创新大赛省银奖</li>
+                <li><span class="hl-dot"></span>第一作者 2 篇 + 参与 1 篇学术论文</li>
+                <li><span class="hl-dot"></span>2 项科研经历（AI+教育 / 医学图像分割）</li>
+                <li><span class="hl-dot"></span>4 年班长 + 院学生会主席团</li>
+                <li><span class="hl-dot"></span>中共党员 · 推免至深圳大学</li>
+              </ul>
+            </div>
+            <h3 class="block-title">校园生活</h3>
+            <div class="timeline card-glass reveal">
+              <div class="timeline-item"><div class="timeline-time">2022.09 - 2026.07</div><div class="timeline-role">班长</div><div class="timeline-desc">负责班级日常事务管理、组织班级活动、协调师生关系。</div></div>
+              <div class="timeline-item"><div class="timeline-time">2024.09 - 2025.11</div><div class="timeline-role">院团委学生会主席团成员</div><div class="timeline-desc">参与学院重大活动策划与组织，协调各部门工作。</div></div>
+              <div class="timeline-item"><div class="timeline-time">2023.09 - 2024.09</div><div class="timeline-role">学习部负责人</div><div class="timeline-desc">组织学术讲座、学习交流活动，提升学习氛围。</div></div>
+              <div class="timeline-item"><div class="timeline-time">2023.09 - 2025.01</div><div class="timeline-role">教学管理办公室助理</div><div class="timeline-desc">协助维护教学管理运转，收集教学资料，上报数据。</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 科研成果 ========== -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-head"><h2 class="section-title">科研成果</h2><p class="section-subtitle">Research &amp; Publications</p></div>
+        <h3 class="block-title">科研经历</h3>
+        <div class="research-grid">
+          <div class="research-card card-glass reveal">
+            <div class="research-icon">🔬</div>
+            <div class="research-time">2024.09 - 2025.03</div>
+            <h4 class="research-title">人工智能技术对在线教育生态的系统性重塑</h4>
+            <p class="research-desc">研究 AI 技术如何系统性重塑在线教育生态，涵盖教学方法变革、个性化学习路径优化及教育公平性影响分析。</p>
+            <div class="research-tags"><span>AI+教育</span><span>系统性研究</span></div>
+          </div>
+          <div class="research-card card-glass reveal">
+            <div class="research-icon">🧬</div>
+            <div class="research-time">2023.09 - 2025.06</div>
+            <h4 class="research-title">融合领域知识的核素骨显像图像病灶可靠分割研究</h4>
+            <p class="research-desc">研究融合医学领域知识的深度学习方法，用于核素骨显像图像中病灶的可靠分割，提升医学图像分析的准确性与鲁棒性。</p>
+            <div class="research-tags"><span>医学图像分割</span><span>深度学习</span><span>领域知识融合</span></div>
+          </div>
+        </div>
+        <h3 class="block-title">学术论文</h3>
+        <div class="papers-list">
+          <div class="paper-card card-glass reveal">
+            <div class="paper-rank">第一作者</div>
+            <div class="paper-content">
+              <h4 class="paper-title">人工智能在在线教育中的应用与影响分析</h4>
+              <div class="paper-journal">《高等教育理论与实践》</div>
+            </div>
+          </div>
+          <div class="paper-card card-glass reveal">
+            <div class="paper-rank">第一作者</div>
+            <div class="paper-content">
+              <h4 class="paper-title">基于深度学习的人工智能图像识别算法研究与应用</h4>
+              <div class="paper-journal">《前沿科学》</div>
+            </div>
+          </div>
+          <div class="paper-card card-glass reveal">
+            <div class="paper-rank">团队成员</div>
+            <div class="paper-content">
+              <h4 class="paper-title">基于数控技术的蛋雕艺术的传承与创新发展</h4>
+              <div class="paper-journal">《机械工程与自动化》</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 核心优势（Bento 拼盘：职业匹配 + 数据 + 技能） ========== -->
+    <section id="strength" class="section">
+      <div class="container">
+        <div class="section-head"><h2 class="section-title">核心优势</h2><p class="section-subtitle">Why Me · Strengths</p></div>
+
+        <div class="bento-grid">
+          <!-- 大格 2x2：职业优势匹配 -->
+          <div class="bento-item bento-match card-glass reveal">
+            <h3 class="bento-match-title">岗位匹配度</h3>
+            <p class="bento-match-sub">计算机工程背景 × 4 年管理经验 × 沟通协调能力</p>
+            <div class="match-list">
+              <div class="match-item">
+                <div class="match-job"><span class="match-icon">🎯</span>产品经理</div>
+                <div class="match-basis">
+                  <span>数据标注组长：用户思维与需求把控</span>
+                  <span>竞赛答辩与路演：表达与展示能力</span>
+                  <span>AI+教育科研：技术趋势洞察</span>
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-job"><span class="match-icon">📋</span>项目管理</div>
+                <div class="match-basis">
+                  <span>班长 4 年：长期事务统筹</span>
+                  <span>院学生会主席团：跨部门协调</span>
+                  <span>挑战杯队长：团队目标交付</span>
+                </div>
+              </div>
+              <div class="match-item">
+                <div class="match-job"><span class="match-icon">💻</span>开发测试</div>
+                <div class="match-basis">
+                  <span>计算机硕士：扎实工程基础</span>
+                  <span>标注准确率 95%+：质量意识</span>
+                  <span>计算机三级 + Linux：技术广度</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 数据小格 ×6 -->
+          <div class="bento-item bento-stat card-glass reveal"><div class="stat-num" data-count="3.80" data-decimals="2">0</div><div class="stat-label">平均学分绩点</div></div>
+          <div class="bento-item bento-stat card-glass reveal"><div class="stat-num" data-count="4.1" data-suffix="%">0</div><div class="stat-label">专业排名前</div></div>
+          <div class="bento-item bento-stat card-glass reveal"><div class="stat-num" data-count="143" data-prefix="5 / ">0</div><div class="stat-label">综合排名</div></div>
+          <div class="bento-item bento-stat card-glass reveal"><div class="stat-num" data-count="3" data-suffix=" 篇">0</div><div class="stat-label">学术论文</div></div>
+          <div class="bento-item bento-stat card-glass reveal"><div class="stat-num" data-count="4" data-suffix=" 年">0</div><div class="stat-label">学生干部</div></div>
+          <div class="bento-item bento-stat card-glass reveal"><div class="stat-num" data-count="12" data-suffix="+">0</div><div class="stat-label">校级以上荣誉</div></div>
+
+          <!-- 技能格 -->
+          <div class="bento-item bento-lang card-glass reveal tilt">
+            <h3 class="skill-cat"><span class="skill-icon-sm">⚡</span>编程语言</h3>
+            <ul class="skill-list">
+              <li><span class="skill-name">C 语言</span><span class="skill-bar"><i style="width:85%"></i></span></li>
+              <li><span class="skill-name">Java</span><span class="skill-bar"><i style="width:80%"></i></span></li>
+              <li><span class="skill-name">SQL</span><span class="skill-bar"><i style="width:75%"></i></span></li>
+            </ul>
+          </div>
+          <div class="bento-item bento-stack card-glass reveal tilt">
+            <h3 class="skill-cat"><span class="skill-icon-sm">🛠</span>技术栈</h3>
+            <ul class="skill-list">
+              <li><span class="skill-name">数据结构与算法</span><span class="skill-bar"><i style="width:82%"></i></span></li>
+              <li><span class="skill-name">数据库原理</span><span class="skill-bar"><i style="width:78%"></i></span></li>
+              <li><span class="skill-name">计算机网络</span><span class="skill-bar"><i style="width:75%"></i></span></li>
+              <li><span class="skill-name">Linux 系统</span><span class="skill-bar"><i style="width:70%"></i></span></li>
+            </ul>
+          </div>
+          <div class="bento-item bento-soft card-glass reveal tilt">
+            <h3 class="skill-cat"><span class="skill-icon-sm">🤝</span>通用能力</h3>
+            <ul class="skill-tag-list"><li>团队协作</li><li>沟通协调</li><li>项目管理</li><li>抗压能力</li><li>逻辑思维</li><li>责任心</li><li>组织策划</li><li>数据分析</li></ul>
+          </div>
+          <div class="bento-item bento-cert card-glass reveal tilt">
+            <h3 class="skill-cat"><span class="skill-icon-sm">🏅</span>证书资格</h3>
+            <ul class="cert-list"><li>计算机三级证书</li><li>熟悉网络原理</li><li>了解网络安全</li><li>具备系统管理能力</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 项目经历（卡片可展开） ========== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head"><h2 class="section-title">项目经历</h2><p class="section-subtitle">Project Experience</p></div>
+        <div class="projects-grid-4">
+          <article class="project-card card-glass reveal tilt">
+            <div class="project-banner" data-color="blue"><span class="project-icon">📊</span><span class="project-type">实习项目</span></div>
+            <div class="project-body">
+              <h3 class="project-title">数据标注项目</h3>
+              <div class="project-org">河南易宝数字科技</div>
+              <p class="project-desc">担任数据标注组长，负责任务分配、质量把控、人员培训、流程优化与数据分析。</p>
+              <div class="project-expand">
+                <div class="project-result"><strong>成果：</strong>标注数据准确率达 95% 以上，标注效率提升 20%；锻炼了团队管理、沟通协调及数据分析能力。</div>
+                <div class="project-tags"><span>团队管理</span><span>数据分析</span><span>流程优化</span><span>质量把控</span></div>
+              </div>
+              <button class="project-toggle" aria-expanded="false"><span class="pt-text">查看成果</span><span class="pt-arrow">▾</span></button>
+              <div class="project-meta-row"><span class="project-time">2023.06 - 2023.09</span></div>
+            </div>
+          </article>
+          <article class="project-card card-glass reveal tilt">
+            <div class="project-banner" data-color="purple"><span class="project-icon">🏆</span><span class="project-type">竞赛项目 · 队长</span></div>
+            <div class="project-body">
+              <h3 class="project-title">"挑战杯"科技作品</h3>
+              <div class="project-org">第十五届"挑战杯"甘肃省大学生课外学术科技作品竞赛</div>
+              <p class="project-desc">作为队长带领团队参与课外学术科技作品的方案设计、研究与实现，负责项目统筹与答辩。</p>
+              <div class="project-expand">
+                <div class="project-result"><strong>成果：</strong>甘肃省省级一等奖。团队从选题论证、方案设计到落地实现全程由本人统筹推进，并在答辩环节完成项目展示。</div>
+                <div class="project-tags"><span>项目管理</span><span>团队领导</span><span>学术研究</span><span>答辩展示</span></div>
+              </div>
+              <button class="project-toggle" aria-expanded="false"><span class="pt-text">查看成果</span><span class="pt-arrow">▾</span></button>
+              <div class="project-meta-row"><span class="project-time">2024.11 - 2025.07</span></div>
+            </div>
+          </article>
+          <article class="project-card card-glass reveal tilt">
+            <div class="project-banner" data-color="green"><span class="project-icon">💡</span><span class="project-type">竞赛项目 · 核心成员</span></div>
+            <div class="project-body">
+              <h3 class="project-title">大学生创新大赛</h3>
+              <div class="project-org">中国国际大学生创新大赛</div>
+              <p class="project-desc">作为核心成员参与创新项目的策划、商业模式设计与展示，负责技术方案与答辩材料准备。</p>
+              <div class="project-expand">
+                <div class="project-result"><strong>成果：</strong>甘肃省银奖。负责项目技术可行性分析与展示材料打磨，配合团队完成从校赛到省赛的全流程。</div>
+                <div class="project-tags"><span>创新策划</span><span>商业模式</span><span>答辩展示</span></div>
+              </div>
+              <button class="project-toggle" aria-expanded="false"><span class="pt-text">查看成果</span><span class="pt-arrow">▾</span></button>
+              <div class="project-meta-row"><span class="project-time">2023.03 - 2024.09</span></div>
+            </div>
+          </article>
+          <article class="project-card card-glass reveal tilt">
+            <div class="project-banner" data-color="orange"><span class="project-icon">👥</span><span class="project-type">校园项目</span></div>
+            <div class="project-body">
+              <h3 class="project-title">学生工作团队管理</h3>
+              <div class="project-org">西北民族大学 · 院团委学生会</div>
+              <p class="project-desc">担任班长 4 年，并任院学生会主席团成员，组织学院重大活动，协调各部门工作。</p>
+              <div class="project-expand">
+                <div class="project-result"><strong>成果：</strong>连续三年获评优秀学生干部；组织院级大型活动 10+ 场，协调 5 个部门联动；所在班级凝聚力显著提升。</div>
+                <div class="project-tags"><span>团队管理</span><span>组织协调</span><span>活动策划</span><span>沟通执行</span></div>
+              </div>
+              <button class="project-toggle" aria-expanded="false"><span class="pt-text">查看成果</span><span class="pt-arrow">▾</span></button>
+              <div class="project-meta-row"><span class="project-time">2022.09 - 2026.07</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 荣誉证书（轮播图） ========== -->
+    <section id="awards" class="section">
+      <div class="container">
+        <div class="section-head"><h2 class="section-title">荣誉证书</h2><p class="section-subtitle">Honors &amp; Certificates</p></div>
+        <div class="cert-carousel" id="cert-carousel">
+          <button class="cert-arrow cert-arrow-prev" id="cert-prev" aria-label="上一张">‹</button>
+          <div class="cert-viewport">
+            <div class="cert-track" id="cert-track">
+              <div class="cert-slide"><img src="assets/certs/national_scholarship.jpg" alt="国家奖学金证书" /><div class="cert-caption">国家奖学金</div></div>
+              <div class="cert-slide"><img src="assets/certs/challenge_cup.jpg" alt="挑战杯省一等奖证书" /><div class="cert-caption">挑战杯甘肃省一等奖</div></div>
+              <div class="cert-slide"><img src="assets/certs/innovation_competition.jpg" alt="创新大赛省银奖证书" /><div class="cert-caption">创新大赛甘肃省银奖</div></div>
+              <div class="cert-slide"><img src="assets/certs/computer_design.jpg" alt="计算机设计大赛二等奖证书" /><div class="cert-caption">计算机设计大赛省二等奖</div></div>
+              <div class="cert-slide"><img src="assets/certs/outstanding_student_cadre.jpg" alt="优秀学生干部证书" /><div class="cert-caption">优秀学生干部</div></div>
+            </div>
+          </div>
+          <button class="cert-arrow cert-arrow-next" id="cert-next" aria-label="下一张">›</button>
+          <div class="cert-dots" id="cert-dots"></div>
+        </div>
+        <h3 class="block-title">全部荣誉</h3>
+        <div class="awards-grid-3">
+          <div class="awards-group card-glass reveal">
+            <div class="awards-head"><span class="award-dot award-dot-national"></span><h3 class="awards-level">国家级</h3></div>
+            <ul class="awards-list">
+              <li><span class="award-year">2024-2025</span>国家奖学金</li>
+              <li><span class="award-year">2023-2024</span>国家励志奖学金 · 精神文明新风奖</li>
+            </ul>
+          </div>
+          <div class="awards-group card-glass reveal">
+            <div class="awards-head"><span class="award-dot award-dot-province"></span><h3 class="awards-level">省级 / 赛区</h3></div>
+            <ul class="awards-list">
+              <li><span class="award-year">2024</span>挑战杯甘肃省一等奖</li>
+              <li><span class="award-year">2024</span>中国国际大学生创新大赛 甘肃省银奖</li>
+              <li><span class="award-year">2024</span>计算机设计大赛西北赛区 二等奖</li>
+            </ul>
+          </div>
+          <div class="awards-group card-glass reveal">
+            <div class="awards-head"><span class="award-dot award-dot-school"></span><h3 class="awards-level">校级 / 社会服务</h3></div>
+            <ul class="awards-list">
+              <li><span class="award-year">2022-2025</span>优秀学生干部（连续三年）</li>
+              <li><span class="award-year">2022-2024</span>优秀共青团员 / 团干部</li>
+              <li><span class="award-year">2025</span>寒假社会实践先进个人</li>
+              <li><span class="award-year">2023</span>民族团结进步模范个人</li>
+              <li><span class="award-year">2022</span>军事技能训练优秀标兵</li>
+              <li><span class="award-year">2023-2025</span>兰州马拉松优秀志愿者（三年）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 联系方式 ========== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head"><h2 class="section-title">联系方式</h2><p class="section-subtitle">Contact</p></div>
+        <div class="contact-card card-glass reveal">
+          <div class="contact-avatar" aria-hidden="true">刘</div>
+          <h3 class="contact-name">刘楠</h3>
+          <p class="contact-direction">产品经理 / 项目管理 / 开发测试</p>
+          <div class="contact-items">
+            <a class="contact-item" href="mailto:liun_n0622@163.com"><span class="contact-icon">✉</span><span class="contact-label">邮箱</span><span class="contact-value">liun_n0622@163.com</span></a>
+            <div class="contact-item"><span class="contact-icon">📍</span><span class="contact-label">地区</span><span class="contact-value">广东 · 深圳</span></div>
+            <div class="contact-item"><span class="contact-icon">🎯</span><span class="contact-label">求职意向</span><span class="contact-value">产品经理 / 项目管理 / 开发测试岗</span></div>
+          </div>
+          <a href="mailto:liun_n0622@163.com" class="btn btn-primary contact-btn">给我发邮件</a>
+          <p class="contact-note">欢迎通过邮箱与我联系，期待与您进一步交流。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 刘楠 · 本页面使用 HTML / CSS / JavaScript 手写，未使用前端框架</p>
+      <p class="footer-sub">Designed &amp; built with care · 深蓝科技商务风</p>
+    </div>
+  </footer>
+
+  <!-- 返回顶部 -->
+  <button class="backtop" id="backtop" aria-label="返回顶部">↑</button>
+
+  <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <!-- 证书放大灯箱 -->
+  <div class="cert-lightbox" id="cert-lightbox" aria-hidden="true">
+    <div class="cert-lightbox-inner">
+      <img id="cert-lightbox-img" alt="证书大图" />
+      <button class="cert-lightbox-close" id="cert-lightbox-close" aria-label="关闭">✕</button>
+    </div>
+  </div>
+
+  <script src="js/background.js?v=5"></script>
+  <script src="js/trail.js?v=5"></script>
+  <script src="js/particles.js?v=5"></script>
+  <script src="js/main.js?v=5"></script>
+</body>
+</html>
